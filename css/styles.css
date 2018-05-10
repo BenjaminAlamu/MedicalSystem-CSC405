@@ -7,7 +7,7 @@
 body {
   display: flex;
   align-items: center;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   justify-content: center;
   color: #707070;
 }
@@ -16,17 +16,32 @@ body {
   margin: 0;
   border: 1px solid #FFFFFF;
   border-radius: 50px 0 50px 0;
+  box-shadow: 0 3px 6px;
   background-color: white;
   opacity: 0.91;
   filter: alpha(opacity(91));
   width: 39%;
   height: 81%;
-  padding: 30px;
+  padding: 50px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
+form {
+  width: 90%;
+  padding-top: 85px;
+}
 
 input {
-  width: 72%;
+  margin: 0;
+  display: block;
+  border: 1px solid #000000;
   border-top: none;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  font-size: 20px;
+  /* margin-bottom: 80px; */
 }
