@@ -12,8 +12,8 @@
             <input type = "text" name = "username" placeholder ="USERNAME"></br>
 
             <input type ="password" name = "password" placeholder = "PASSWORD"></br>
-
-            <input class= "login-button" type = "button" value ="LOGIN"></input>
+            
+            <button type = "submit" class= "login-button">LOG IN</button>
           </form>
 
         </div>
