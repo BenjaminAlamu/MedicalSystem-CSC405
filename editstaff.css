@@ -1,0 +1,63 @@
+/*EDIT STAFF*/
+.select{
+  background-color: #4d5b61;
+  height:100%;
+  width:30%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  font-family: 'Century Gothic';
+}
+.back{
+	left: 0;
+	position: absolute;
+	left: 50%;
+	align-content: center;
+	transform: translate(0%,10%);
+	color: #4d5b61 ;
+}
+.bio{
+	margin-bottom: 20px;
+	width: 100%;
+}
+#pos{
+	margin-left: 200px;
+	margin-top: -20px;
+	margin-bottom: 100px;
+	font-family: 'Century Gothic'
+}
+#save{
+	justify-content: center;
+	margin-left: 30%;
+	background-color:#4d5b61;
+	color: white;
+	border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 35px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 100px;
+    font-family: 'Century Gothic'
+}
+.user{
+	margin-bottom: 50px;
+	margin-top: 50px;
+    margin-left: 25%;
+    background-color: white;
+    color: #4d5b61;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 180px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.staff{
+	border-top: none;
+}
