@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/forms.css">
+    <title>Add Staff</title>
+  </head>
+  <body>
+  <div id = "content">
+    <div class = "leftside">
+
+      <form action = "adduser.php">
+        <input type = "button" value = "Add User">
+      </form>
+
+      <form action = "questionaire.php">
+        <input type = "button" value = "Add Questionaire">
+      </form>
+
+      <form action = "logout.php">
+        <input type = "button" value = "Log Out">
+      </form>
+    </div>
+      <div class = "rightside">
+          <form>
+            <h3>Add Staff</h3>
+          <legend><span class = "number">1</span>Personal Information</legend>
+          <input type ="text" name = "firstName" placeholder = "First Name"></input><br>
+
+          <input type ="text" name = "lastName" placeholder = "Last Name"></input><br>
+
+          <input type ="number" name = "phoneNo" placeholder = "Phone Number"></input><br>
+
+          <input type ="textarea" name = "address" placeholder = "Home Address"></input> <br> 
+
+          
+          <input id ="submit" type = "button" value = "Submit">
+
+          </form>
+
+      </div>
+      </div>
+  </body>
+</html>
