@@ -66,6 +66,7 @@ html,body{
 
  .label {
     float: left;
+    font-family: 'Montserrat';
   } 
 
   input[type="button"]{
@@ -83,6 +84,23 @@ html,body{
     box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
     margin:20px auto;
   }
+
+#submit{
+    padding: 15px;
+    color: #fff;
+    background-color: #5F7175;
+    font-size: 12px;
+    text-align: center;
+    font-style: normal;
+    font-family: "Montserrat";
+    border-radius: 5px;
+    width: 20%;
+    /* border: 1px solid #3ac162; */
+    border-width: 1px 1px 3px;
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    margin:20px auto;
+  }
+
 
   input[type="textarea"],
   input[type="password"],

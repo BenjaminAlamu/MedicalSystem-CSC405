@@ -1,36 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-	<link rel="stylesheet" href="css/editstaff.css">
-</head>
-<body>
-		<div class= "select">
-		<button type = "button" class = "user">ADD USER </button></br>
-		<button type = "button" class = "user">ACCESS WEB</button></br>
-		<button type = "button" class = "user">LOG OUT</button>
-		</div>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/forms.css">
+    <title>Edit Staff</title>
+  </head>
+  <body>
+  <div id = "content">
+    <div class = "leftside">
 
-	<div class = "back">
-		<div class = "staff">
-		<input type="text" name="fname" class = "bio"  placeholder="FIRST NAME"></br>
-		<input type="text" name="lname" class = "bio" placeholder="LAST NAME"></br>
-		<input type="number" name="tel" class = "bio" placeholder="PHONE NUMBER"></br>
-		<textarea type="text" name="address" class = "bio" placeholder="ADDRESS"> </textarea></br>
-		<input type="text" name="Uname" class = "bio" placeholder="USERNAME"></br>
-		<input type="text" name="password" class = "bio" placeholder="PASSWORD"></br>
-		<input type="text" name="password2" class = "bio" placeholder="ENTER AGAIN"></br>
-		</div>
+      <form action = "adduser.php">
+        <input type = "button" value = "Add User">
+      </form>
 
-		POSITION
-		<div id= "pos">
-		<input type="radio" name="doctor">DOCTOR</br>
-		<input type="radio" name="support">SUPPORT STAFF</br>
-		<input type="radio" name="admin">ADMIN</br>
-		</div>
+      <form action = "questionaire.php">
+        <input type = "button" value = "Add Questionaire">
+      </form>
 
-	<button id = "save" type = "button">SAVE</button>
-</div>
-</body>
+      <form action = "logout.php">
+        <input type = "button" value = "Log Out">
+      </form>
+    </div>
+      <div class = "rightside">
+          <form>
+		  <h3>Edit Staff</h3>
+          <legend><span class = "number">1</span>Personal Information</legend>
+          <input type ="text" name = "firstName" placeholder = "First Name"></input><br>
+
+          <input type ="text" name = "lastName" placeholder = "Last Name"></input><br>
+
+          <input type ="number" name = "phoneNo" placeholder = "Phone Number"></input><br>
+
+          <input type ="textarea" name = "address" placeholder = "Home Address"></input> <br> 
+
+          
+          <legend><span class = "number">2</span>Login Information</legend>
+          
+          <input type ="text" name = "user-name" placeholder = "Username"></input><br>
+
+          <input type ="password" name = "pass-word" placeholder = "Password"></input><br>
+
+          <input type ="password" name = "repeatPassword" placeholder = "Confirm Password"></input><br>
+          
+          <input id ="submit" type = "button" value = "Submit">
+
+          </form>
+
+      </div>
+      </div>
+  </body>
 </html>

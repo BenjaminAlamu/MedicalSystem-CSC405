@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/adduser.css">
-    <title>Add User</title>
+    <link rel="stylesheet" href="css/forms.css">
+    <title>Add Staff</title>
   </head>
   <body>
   <div id = "content">
@@ -23,6 +23,7 @@
     </div>
       <div class = "rightside">
           <form>
+            <h3>Add Staff</h3>
           <legend><span class = "number">1</span>Personal Information</legend>
           <input type ="text" name = "firstName" placeholder = "First Name"></input><br>
 
@@ -51,6 +52,8 @@
           <div class = "radioitem"><input type = "radio" name = "supportstaff" id ="supportstaff" value="supportstaff"><label for = "supportstaff" class = "label" >Support Staff</label><br></div>
 
           <div class = "radioitem"><input type = "radio" name = "admin" id ="admin" value="admin"><label for = "admin" class = "label" >Admin</label><br></div>
+
+          <input id ="submit" type = "button" value = "Submit">
 
           </form>
 
