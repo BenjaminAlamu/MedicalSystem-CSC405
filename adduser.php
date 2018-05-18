@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Add Staff</title>
   </head>
   <body>
+    <?php include "inc/header.php"; ?>
   <div id = "content">
     <div class = "leftside">
 
@@ -59,5 +61,6 @@
 
       </div>
       </div>
+      <?php include "inc/footer.php"; ?>
   </body>
 </html>

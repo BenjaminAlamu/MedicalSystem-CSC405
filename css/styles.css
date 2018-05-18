@@ -32,119 +32,13 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
+  margin-bottom: -20px;
 }
 
-html,body{
-    margin:0;
-    font-family: "Montserrat";
-    
+input[type="password"],
+input[type="text"]{
+  font-family: 'Montserrat';
 }
-.number {
-    background-color: #5F7175;
-    color: #fff;
-    height: 30px;
-    width: 30px;
-    display: inline-block;
-    font-size: 0.8em;
-    margin: 10px 4px 10px auto;
-    line-height: 30px;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-    border-radius: 100%;
-  }
-
-  .leftside{
-      width: 30%;
-      background-color: #5F7175;
-      float: left;
-      min-height: 150vh;
-      margin : 0;
-      padding-top: 100px;
-      text-align: center;
-  }
-
-  .rightside{
-      width:70%;
-      float: right;
-      min-height: 00vh;
-      margin : 0;    
-      
-  }
-
-  form{
-      text-align: center;
-      padding: 10px;
-  }
-
-  .content{
-      margin : 0;
-      padding: 0;
-
-  }
-
-  legend{
-      margin: 30px;
-  }
-
-  .radioitem{
-      margin: 10px 23%;
-      
-  }
-
-
-   input[type="radio"]{
-    border: 0;
-    outline: 0;
-    float: left;
-    margin-right: 10px;
-    padding: 5px;
-  } 
-
- .label {
-    float: left;
-  } 
-
-  input[type="button"]{
-    padding: 15px;
-    color: #5F7175;
-    background-color: #fff;
-    font-size: 12px;
-    text-align: center;
-    font-style: normal;
-    font-family: "Montserrat";
-    border-radius: 5px;
-    width: 60%;
-    /* border: 1px solid #3ac162; */
-    border-width: 1px 1px 3px;
-    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-    margin:20px auto;
-  }
-
-  input[type="textarea"],
-  input[type="password"],
-  input[type="number"],
-  input[type="text"]
-   {
-      border: 0;
-      outline: 0;
-      background: transparent;
-      border-bottom: 1px solid black;
-      border-left: 1px solid black;
-      border-right: 1px solid black;
-      font-size: 12px;
-      height: auto;
-      margin: 10px auto;
-      padding: 15px;
-      width: 50%;
-      font-family: "Montserrat";
-  }
-
-
-
-
-
-
-
 
 form {
   width: 90%;
@@ -174,7 +68,45 @@ input {
   border-radius: 30px;
   padding: 15px 32px;
   width: 30%;
+  font-family: 'Montserrat';
   
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: #262827;
+  top: 0;
+  color: #fff;
+  font-family: 'Montserrat';
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul li {
+  padding: 10px;
+}
+
+#logo{
+  padding: 15px 5%;
+}
+
+footer{
+  text-align: center;
+  background-color: #262827;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+footer p{
+  margin: 0;
+  padding: 10px;
+  color: #fff;
 }
 
 

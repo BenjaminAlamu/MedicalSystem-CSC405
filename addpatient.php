@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/forms.css">
-    <title>Add Staff</title>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Add Patient</title>
   </head>
   <body>
+    <?php include "inc/header.php"; ?>
   <div id = "content">
     <div class = "leftside">
 
@@ -23,7 +25,7 @@
     </div>
       <div class = "rightside">
           <form>
-            <h3>Add Staff</h3>
+            <h3>Add Patient</h3>
           <legend><span class = "number">1</span>Personal Information</legend>
           <input type ="text" name = "firstName" placeholder = "First Name"></input><br>
 
@@ -40,5 +42,6 @@
 
       </div>
       </div>
+      <?php include "inc/footer.php"; ?>
   </body>
 </html>

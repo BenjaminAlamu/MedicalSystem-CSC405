@@ -3,6 +3,14 @@
       <link rel="stylesheet" href="css/styles.css">
     </head>
     <body background="img/backgroundSetup.jpg">
+    <header>
+<nav>
+    <ul>
+        <li id="logo">Hospital Management System</li>
+    </ul>
+
+</nav>
+</header>
 
         <div class ="login-box">
 
@@ -17,6 +25,6 @@
           </form>
 
         </div>
-
+        <?php include "inc/footer.php"; ?>
     </body>
 </html>

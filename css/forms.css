@@ -17,34 +17,42 @@ html,body{
     border-radius: 100%;
   }
 
+  #content{
+    margin : 0;
+    padding: 0;
+    display: flex;
+}
+
   .leftside{
       width: 30%;
       background-color: #5F7175;
       float: left;
-      min-height: 150vh;
       margin : 0;
-      padding-top: 100px;
+      padding-top: 80px;
       text-align: center;
+      margin-top: 70px;
+      flex-grow: inherit;
+      
   }
 
   .rightside{
       width:70%;
       float: right;
-      min-height: 100vh;
       margin : 0;    
-      
+      margin-top: 70px;
   }
+
+  .center{
+    text-align: center;
+    height: 100vh;
+    margin : 0;    
+}
 
   form{
       text-align: center;
       padding: 10px;
   }
 
-  .content{
-      margin : 0;
-      padding: 0;
-
-  }
 
   legend{
       margin: 30px;
@@ -121,3 +129,24 @@ html,body{
       font-family: "Montserrat";
   }
 
+  header {
+    position: fixed;
+    width: 100%;
+    background-color: #262827;
+    top: 0;
+    color: #fff;
+    font-family: 'Montserrat';
+  }
+  
+  nav ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    padding: 10px;
+  }
+  
+  #logo{
+    padding: 15px 5%;
+  }
