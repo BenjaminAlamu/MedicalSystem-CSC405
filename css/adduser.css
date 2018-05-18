@@ -1,39 +1,3 @@
-/****************************
-GENERAL RULES/ LOGIN PAGE
-****************************/
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
-  justify-content: center;
-  color: #707070;
-}
-
-.login-box {
-  margin: 0;
-  border: 1px solid #FFFFFF;
-  border-radius: 50px 0 50px 0;
-  box-shadow: 0 3px 6px;
-  background-color: white;
-  opacity: 0.91;
-  filter: alpha(opacity(91));
-  width: 39%;
-  height: 81%;
-  padding: 50px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-}
-
 html,body{
     margin:0;
     font-family: "Montserrat";
@@ -66,7 +30,7 @@ html,body{
   .rightside{
       width:70%;
       float: right;
-      min-height: 00vh;
+      min-height: 100vh;
       margin : 0;    
       
   }
@@ -138,43 +102,4 @@ html,body{
       width: 50%;
       font-family: "Montserrat";
   }
-
-
-
-
-
-
-
-
-form {
-  width: 90%;
-  padding-top: 85px;
-  align-self: center;
-}
-
-input {
-  width : 100%;
-  /*margin: 0;*/
-  display: block;
-  border: 1px solid #707070;
-  border-top: none;
-  padding-left: 10px;
-  padding-bottom: 5px;
-  margin-bottom: 50px;
-  font-size: 20px;
-  /* margin-bottom: 80px; */
-}
-
-.login-button {
-  
-  background-color: #6A8599;
-  color: white;
-  border: 0px;
-  text-align: center;
-  border-radius: 30px;
-  padding: 15px 32px;
-  width: 30%;
-  
-}
-
 
