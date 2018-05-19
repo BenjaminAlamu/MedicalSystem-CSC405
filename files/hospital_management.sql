@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2018 at 12:31 AM
+-- Generation Time: May 19, 2018 at 01:01 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -21,6 +21,53 @@ SET time_zone = "+00:00";
 --
 -- Database: `hospital_management`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `pass_word` varchar(10) NOT NULL,
+  `staff_type` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`id`, `username`, `pass_word`, `staff_type`) VALUES
+(1, 'admin1', 'admin1', 'admin'),
+(2, 'admin2', 'admin2', 'admin'),
+(3, 'doc1', 'doc1', 'doctor'),
+(4, 'doc2', 'doc2', 'doctor'),
+(5, 'supportstaff1', 'support1', 'supportstaff'),
+(6, 'supportstaff2', 'support2', 'supportstaff');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient_bio`
+--
+
+CREATE TABLE `patient_bio` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `phonenum` varchar(15) NOT NULL,
+  `address` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `patient_bio`
+--
+
+INSERT INTO `patient_bio` (`id`, `firstname`, `lastname`, `phonenum`, `address`) VALUES
+(1, 'Christian', 'Daniels', '08011111111', '24, Festac Drive Mile 2'),
+(2, 'Asaph', 'Mic', '08022222222', 'F206, Enijokwu Hall Unilag');
 
 -- --------------------------------------------------------
 
@@ -55,6 +102,18 @@ INSERT INTO `staff_bio` (`id`, `firstname`, `lastname`, `phonenumber`, `address`
 --
 
 --
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `patient_bio`
+--
+ALTER TABLE `patient_bio`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `staff_bio`
 --
 ALTER TABLE `staff_bio`
@@ -63,6 +122,18 @@ ALTER TABLE `staff_bio`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `patient_bio`
+--
+ALTER TABLE `patient_bio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `staff_bio`
