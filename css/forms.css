@@ -24,7 +24,7 @@ html,body{
 }
 
   .leftside{
-      width: 30%;
+      width: 25%;
       background-color: #5F7175;
       float: left;
       margin : 0;
@@ -36,7 +36,7 @@ html,body{
   }
 
   .rightside{
-      width:70%;
+      width:75%;
       float: right;
       margin : 0;    
       margin-top: 70px;
