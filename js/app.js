@@ -1,4 +1,17 @@
+function validateForm() {
+  var w = document.forms["addpatient"]["phoneNo"].value;
+  var x = document.forms["addpatient"]["firstName"].value;
+  var y = document.forms["addpatient"]["lastName"].value;
 
+  if ((!/^[a-zA-Z\s-]+$/.test(x)) || (!/^[a-zA-Z\s]+$/.test(y))) {
+    alert("Invalid Name");
+    return false;
+  }
+  else if (!/^\d{11}$/.test(w)) {
+    alert("Invalid Phone Number");
+    return false;
+  }
+}
 var addInput = document.getElementById("add");
 var questionLocation = document.getElementById("questions");
 let i = 1;
