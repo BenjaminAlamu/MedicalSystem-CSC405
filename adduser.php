@@ -1,6 +1,10 @@
 <?php
   session_start();
 ?>
+
+<?php
+  include ("inc/database.php");
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -63,9 +67,24 @@
           </form>
 
           <?php
-          if ($_POST){
-           echo"<script> alert('YES!');</script>";
-          }  
+          if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+            $firstname = $_POST["firstName"];
+            $lastname = $_POST["lastName"];
+            $phoneNo = $_POST["phoneNo"];
+            $address = $_POST["address"];
+            $user_name = $_POST["user-name"];
+            $pass_word = $_POST["pass-word"];
+            $repeatpassword = $_POST["repeatPassword"];
+            $type = $_POST["type"];
+
+              $sql = "INSERT INTO 'staff_bio' ('firstname','lastname', 'phonenumber', 'address', 'staff_type', 'username', 'password')
+                      VALUES('$firstname', '$lastname', '$phoneNo', '$address', '$type', '$user_name', '$pass_word')";
+              $conn->exec($sql);
+              echo "<script>alert('User Added Successfully.'); </script>";
+              $conn = null;
+            }
+        
 
           ?>
       </div>
