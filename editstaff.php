@@ -12,20 +12,17 @@
   <body>
     <?php include "inc/header.php"; ?>
   <div id = "content">
-    <div class = "leftside">
-
-      <form action = "adduser.php">
-        <input type = "button" value = "Add User">
-      </form>
-
-      <form action = "questionaire.php">
-        <input type = "button" value = "Add Questionaire">
-      </form>
-
-      <form action = "logout.php">
-        <input type = "button" value = "Log Out">
-      </form>
-    </div>
+  <div id = "content">
+  <div class = "leftside">
+    <?php
+    if ($_SESSION['staff_type'] == "doctor"){
+      include "inc/doctorleft.php";
+    }
+    elseif ($_SESSION['staff_type'] == "supportstaff"){
+      include "inc/supportleft.php";
+    }
+    ?>
+  </div>
       <div class = "rightside">
           <form>
 		  <h3>Edit Staff</h3>

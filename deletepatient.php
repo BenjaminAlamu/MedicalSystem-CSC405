@@ -7,8 +7,8 @@
 
 include ("inc/database.php");
 
-//$id = $_POST["id"];
-$id = "1"; //This id will be gotten from the click event
+$id = $_POST["id"];
+
 
 //Check if id is in the database
 $check = $conn ->query("SELECT * FROM patient_bio WHERE id ='" . $id ."'");

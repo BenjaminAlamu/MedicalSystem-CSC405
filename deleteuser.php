@@ -7,8 +7,8 @@
 
 include ("inc/database.php");
 
-//$id = $_POST["id"];
-$id = "6"; //This id will be gotten from the click event
+$id = $_POST["id"];
+
 
 $check = $conn ->query("SELECT * FROM staff_bio WHERE id ='" . $id . "'");
 $check = $check -> fetchAll(PDO::FETCH_ASSOC);
