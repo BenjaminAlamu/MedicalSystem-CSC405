@@ -77,7 +77,8 @@ html,body{
     font-family: 'Montserrat';
   } 
 
-  input[type="button"]{
+  input[type="button"],
+  .buttons{
     padding: 15px;
     color: #5F7175;
     background-color: #fff;
@@ -90,10 +91,21 @@ html,body{
     /* border: 1px solid #3ac162; */
     border-width: 1px 1px 3px;
     box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-    margin:20px auto;
+    margin:50px auto;
   }
 
-#submit{
+  a{
+    display: block;
+    text-decoration: white;
+    text-decoration-line: none;
+    
+  }
+
+#submit, 
+.search-button,  
+input[type="submit"],
+button
+{
     padding: 15px;
     color: #fff;
     background-color: #5F7175;
@@ -149,4 +161,45 @@ html,body{
   
   #logo{
     padding: 15px 5%;
+  }
+
+  #search-staff{
+    border: 1px solid black;
+    background: transparent;
+    font-size: 8px;
+    height: auto;
+    margin: 10px 50px;
+    padding: 20px;
+    width: 50%;
+    font-family: "Montserrat";
+  }
+
+#search-button{
+  padding: 15px;
+  color: #fff;
+  background-color: #5F7175;
+  font-size: 12px;
+  text-align: center;
+  font-style: normal;
+  font-family: "Montserrat";
+  border-radius: 5px;
+  width: 20%;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin: 20px auto;
+}
+
+  #search{
+    display: inline;
+    margin: auto;
+    padding: auto;
+  }
+
+  #addQuestion{
+    padding-top: 150px;
+  }
+
+  .lab{
+    float: left;
+    padding-left: 12%;
   }
