@@ -1,8 +1,9 @@
 <html>
     <head>
+      <link rel ="stylesheet" href = "css/background.css">
       <link rel="stylesheet" href="css/styles.css">
     </head>
-    <body background="img/backgroundSetup.jpg">
+    <body>
     <header>
 <nav>
     <ul>
