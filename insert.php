@@ -13,15 +13,16 @@
     include "inc/database.php";
     include "inc/header.php";
     include "inc/doctorleft.php";
-    if (isset($_GET["id"])){
-        $patientid = $_GET["id"];
+    // if (isset($_GET["id"])){
+    //     $patientid = $_GET["id"];
     
-        //Redirect
-    }
-    else{
-        //Redirect to home page
-    }
+    //     //Redirect
+    // }
+    // else{
+    //     //Redirect to home page
+    // }
     
+    $patientid = 2;
     
     //Get patient data from db
     $sql = $conn -> query("SELECT * FROM patient_bio WHERE id = $patientid");
@@ -55,6 +56,10 @@
     //Doctors Notes
     echo "<input type = 'textarea' id = 'doctorNotes' name = 'doctorNotes' placeholder = 'Enter the doctors Notes here'><br>";
 
+
+    echo "<input type = 'hidden'  name = 'patientID'  value ='". $patientid . "'><br>";
+    echo "<input type = 'hidden'  name = 'patientName'  value ='". $patientName . "'><br>";
+
     //Doctors Consultancy Fee
     echo "<input type = 'number' id = 'docFee' name = 'docFee' placeholder = 'Enter the Consultancy Fee here'><br>";
 
@@ -70,7 +75,7 @@
     ?>
 
     <?php
-    $_POST['patientID'] = $patientid;
+     
     ?>
     
     </form> 
