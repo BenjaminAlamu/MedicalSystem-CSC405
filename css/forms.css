@@ -195,11 +195,16 @@ button
     padding: auto;
   }
 
-  #addQuestion{
+  #addQuestion
+  {
     padding-top: 150px;
   }
 
   .lab{
     float: left;
     padding-left: 12%;
+  }
+
+  #insert{
+    padding-top: 70px;
   }

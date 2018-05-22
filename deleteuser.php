@@ -38,7 +38,7 @@ $conn -> exec($deleteStaff);
 //Get the id
 //Use username to get the id from the login database
 
-$deleteLogin = $conn ->query("DELETE FROM login WHERE username = '" . $username . "'");
+$deleteLogin = $conn ->query("DELETE FROM login_info WHERE username = '" . $username . "'");
 var_dump($deleteLogin);
 $conn -> exec($deleteLogin);
 
