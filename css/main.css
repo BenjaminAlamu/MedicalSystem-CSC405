@@ -1,0 +1,33 @@
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #262827;
+    top: 0;
+    color: #fff;
+    font-family: 'Montserrat';
+  }
+  
+  nav ul {
+    display: flex;
+    list-style-type: none;
+  }
+  
+#username{
+    float: right;
+}
+  #logo{
+    padding: 5px 5%;
+    margin-right: 50%;
+  }
+
+  footer{
+      text-align: center;
+      background-color: #262827;
+      margin: 0;
+  }
+
+  footer p{
+      margin: 0;
+      padding: 15px;
+      color: #fff;
+  }
