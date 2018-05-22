@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require_once("inc/database.php");
 
 $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $reErr = $noMatchErr = $radErr="";
 ?>
@@ -51,24 +52,24 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $reErr = $n
     $pass_word = $_POST["pass-word"];
     $repeatpassword = $_POST["repeatPassword"];
 
-                    if(isset($_POST['type'])){
-                      $type = $_POST['type'];
-                      }
-
-                    try{
-                      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
-                      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                      $sql = "INSERT INTO 'staff_bio' ('firstname','lastname', 'phonenumber', 'homeaddress', 'staff_type', 'username' )
-                      VALUES('$firstname', '$lastname', '$phoneNo', '$homeaddress', '$type', '$user_name')";
+    if(isset($_POST['type'])){
+      $type = $_POST['type'];
+      }
+    
+    if ($user_name == $pass_word){
+      $sql = "INSERT INTO staff_bio (firstname, lastname, phonenumber, homeaddress, staff_type, username)
+      VALUES('$firstname', '$lastname', '$phoneNo', '$homeaddress', '$type', '$user_name');
+      
+      INSERT INTO login_info(username, pass_word, staff_type) VALUES ('$user_name', '$pass_word' , '$type');";
                         
-                      $conn->exec($sql);
-                      echo "<script>alert('Staff Added Successfully');</script>";
-                      $conn = null;
-                    }
-                    catch(PDOException $e){
-                        echo "Connection failed";
-                    }
+      $conn->exec($sql);
+      echo "<script>alert('Staff Added Successfully');</script>";
+      $conn = null;
+    }
+    else {
+      echo "<script>alert('Passwords don't match!');</script>";
+    }
+
             }
               ?>
 
@@ -135,7 +136,7 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $reErr = $n
 
           </form>
 
-]
+
       </div>
       </div>
       <?php include "inc/footer.php"; ?>
