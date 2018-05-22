@@ -10,6 +10,7 @@
 	  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
+    <link href="BS3/css/assets/css/bootstrap.min.css"/>
 
     <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -63,7 +64,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="C:\wamp64\www\CSC405\MedicalSystem-CSC405\index.php">
+                    <a href="MedicalSystem-CSC405/index.php">
                         <i class="pe-7s-user"></i>
                         <p>LogOut</p>
                     </a>
@@ -96,7 +97,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="C:\wamp64\www\CSC405\MedicalSystem-CSC405\index.php">
+                            <a href="index.php">
                                 <p>Log out</p>
                             </a>
                         </li>
