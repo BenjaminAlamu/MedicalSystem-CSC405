@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -24,7 +27,7 @@
       </form>
     </div>
       <div class = "rightside">
-          <form>
+          <form method = "post" action ="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <h3>Add Staff</h3>
           <legend><span class = "number">1</span>Personal Information</legend>
           <input type ="text" name = "firstName" placeholder = "First Name"></input><br>
@@ -49,16 +52,22 @@
 
           <legend><span class = "number">3</span>Account Information</legend>
           <h4>Please select an account type</h4>
-          <div class = "radioitem"><input type = "radio" name = "doctor" id ="doctor" value="doctor"><label for = "doctor" class = "label" >Doctor</label><br></div>
+          <div class = "radioitem"><input type = "radio" name = "type" id ="doctor" value="doctor"><label for = "doctor" class = "label" >Doctor</label><br></div>
                 
-          <div class = "radioitem"><input type = "radio" name = "supportstaff" id ="supportstaff" value="supportstaff"><label for = "supportstaff" class = "label" >Support Staff</label><br></div>
+          <div class = "radioitem"><input type = "radio" name = "type" id ="supportstaff" value="supportstaff"><label for = "supportstaff" class = "label" >Support Staff</label><br></div>
 
-          <div class = "radioitem"><input type = "radio" name = "admin" id ="admin" value="admin"><label for = "admin" class = "label" >Admin</label><br></div>
+          <div class = "radioitem"><input type = "radio" name = "type" id ="admin" value="admin"><label for = "admin" class = "label" >Admin</label><br></div>
 
           <input id ="submit" type = "button" value = "Submit">
 
           </form>
 
+          <?php
+          if ($_POST){
+           echo"<script> alert('YES!');</script>";
+          }  
+
+          ?>
       </div>
       </div>
       <?php include "inc/footer.php"; ?>
