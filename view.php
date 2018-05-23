@@ -11,7 +11,6 @@
 
   <?php include "inc/header.php"; ?>
   <div id = "content">
-      <div class = "leftside">
         <?php
         if ($_SESSION['staff_type'] == "doctor"){
           include "inc/doctorleft.php";
@@ -25,7 +24,7 @@
         }
         $patientid = $_GET["id"];
         ?>
-      </div>
+      
 
   <div class = "rightside">
       <div>
@@ -59,7 +58,7 @@
            echo "<li><p>Doctor Name: " . $result['staffName'] . "</p></li>";
            echo "<li><p>Doctor Notes: " . $result['doctorsNotes'] . "</p></li>";
            echo "<li><p>Prescription: " . $result['prescription'] . "</p></li>";
-           echo "<li><p>Session Bill: " . $result['sessionCost'] . "</p></li>";
+           echo "<li><p>Session Bill: N" . $result['sessionCost'] . "</p></li>";
            echo "</ul>";
         }
         

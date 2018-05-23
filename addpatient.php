@@ -11,6 +11,7 @@ if ($_POST) {
             VALUES('$firstName', '$lastName', '$phoneNo', '$address')";
     $conn->exec($sql);
     echo "<script>alert('Patient Added Successfully');</script>";
+    echo "<script>window.location = 'staff.php'</script>";
   }
   catch(PDOException $e)
     {
