@@ -102,6 +102,6 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $noMatchErr
 
       </div>
       </div>
-      <?php include "inc/footer.php"; ?>
+      
   </body>
 </html>

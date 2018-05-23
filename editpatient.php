@@ -82,7 +82,7 @@ if($_POST) {
         </form>
       </div>
     </div>
-    <?php include "inc/footer.php"; ?>
+    
     <script src="js/app.js"></script>
   </body>
 </html>
