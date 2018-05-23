@@ -33,8 +33,12 @@
               echo "<h3> " . $result["firstname"] . " " . $result["lastname"] . " </h3>";
               echo "<a href = 'editstaff.php?id=". $result["id"] . "'>Edit</a>";
               echo "<a href = 'deleteuser.php?id=". $result["id"] . "'>Delete</a>";
+<<<<<<< HEAD
               echo "<a href = 'insert.php?id=". $result["id"] . "'>Add Patient History</a>";
             //   echo "<a href = 'deleteuser.php?id=". $result["id"] . "'>Download History</a>";
+=======
+              
+>>>>>>> 177005c3a0fac93a6cea66770afd31d137e4b224
               
           }
           ?>

@@ -13,6 +13,7 @@
     include "inc/database.php";
     include "inc/header.php";
     include "inc/doctorleft.php";
+<<<<<<< HEAD
     if (isset($_GET["id"])){
         $patientid = $_GET["id"];
     
@@ -22,6 +23,18 @@
         //Redirect to home page
     }
     
+=======
+    // if (isset($_GET["id"])){
+    //     $patientid = $_GET["id"];
+    
+    //     //Redirect
+    // }
+    // else{
+    //     //Redirect to home page
+    // }
+    
+    $patientid = 2;
+>>>>>>> 177005c3a0fac93a6cea66770afd31d137e4b224
     
     //Get patient data from db
     $sql = $conn -> query("SELECT * FROM patient_bio WHERE id = $patientid");
@@ -55,6 +68,13 @@
     //Doctors Notes
     echo "<input type = 'textarea' id = 'doctorNotes' name = 'doctorNotes' placeholder = 'Enter the doctors Notes here'><br>";
 
+<<<<<<< HEAD
+=======
+
+    echo "<input type = 'hidden'  name = 'patientID'  value ='". $patientid . "'><br>";
+    echo "<input type = 'hidden'  name = 'patientName'  value ='". $patientName . "'><br>";
+
+>>>>>>> 177005c3a0fac93a6cea66770afd31d137e4b224
     //Doctors Consultancy Fee
     echo "<input type = 'number' id = 'docFee' name = 'docFee' placeholder = 'Enter the Consultancy Fee here'><br>";
 
@@ -70,7 +90,11 @@
     ?>
 
     <?php
+<<<<<<< HEAD
     $_POST['patientID'] = $patientid;
+=======
+     
+>>>>>>> 177005c3a0fac93a6cea66770afd31d137e4b224
     ?>
     
     </form> 

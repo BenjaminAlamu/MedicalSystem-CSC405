@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 function validateForm(form) {
   var w = document.forms[form.name]["phoneNo"].value;
   var x = document.forms[form.name]["firstName"].value;
   var y = document.forms[form.name]["lastName"].value;
+=======
+function validateForm() {
+  var w = document.forms["addpatient"]["phoneNo"].value;
+  var x = document.forms["addpatient"]["firstName"].value;
+  var y = document.forms["addpatient"]["lastName"].value;
+>>>>>>> 177005c3a0fac93a6cea66770afd31d137e4b224
 
   if ((!/^[a-zA-Z\s-]+$/.test(x)) || (!/^[a-zA-Z\s]+$/.test(y))) {
     alert("Invalid Name");
