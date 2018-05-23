@@ -9,7 +9,7 @@ if (isset($_GET["prod"])){
     header('Location:displayquestionnaire.php');
 }
 else{
-    //Redirect to home page
+    header('Location:admin.php');
 }
 
 

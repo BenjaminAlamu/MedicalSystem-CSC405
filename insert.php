@@ -37,15 +37,7 @@
     echo "<form id = 'insert' method = 'post' action = 'insertrecord.php'><br>
     
     <p>Kindly fill this</p>";
-    $query = $conn->prepare("show tables like 'question%'");
-    $query->execute();
-
-    echo "<div> ";
-    while($rows = $query->fetch(PDO::FETCH_NUM)){
-
-    //    echo " <input type = 'checkbox' id = '" . $rows[0] . "' name = '" . $rows[0] ."' value= '". $rows[0] ."'><label> ". $rows[0] . "</label><br>"; 
-        
-    }
+    
     echo "</div>
     <br>";
 
