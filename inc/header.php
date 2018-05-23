@@ -19,6 +19,8 @@ session_start();
 
 </nav>
 </header>
-    
+<?php
+session_destroy();
+?>
 </body>
 </html>
