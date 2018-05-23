@@ -84,20 +84,7 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $reErr = $n
   <body>
     <?php include "inc/header.php"; ?>
   <div id = "content">
-    <div class = "leftside">
-
-      <form action = "adduser.php">
-        <input type = "button" value = "Add User">
-      </form>
-
-      <form action = "questionaire.php">
-        <input type = "button" value = "Add Questionaire">
-      </form>
-
-      <form action = "logout.php">
-        <input type = "button" value = "Log Out">
-      </form>
-    </div>
+    <?php include "inc/adminleft.php"; ?>
       <div class = "rightside">
           <form method = "post" action ="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <h3>Add Staff</h3>
