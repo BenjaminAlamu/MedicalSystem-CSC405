@@ -1,3 +1,36 @@
+function validateForm() {
+  var w = document.forms["addpatient"]["phoneNo"].value;
+  var x = document.forms["addpatient"]["firstName"].value;
+  var y = document.forms["addpatient"]["lastName"].value;
+
+  if ((!/^[a-zA-Z\s-]+$/.test(x)) || (!/^[a-zA-Z\s]+$/.test(y))) {
+    alert("Invalid Name");
+    return false;
+  }
+  else if (!/^\d{11}$/.test(w)) {
+    alert("Invalid Phone Number");
+    return false;
+  }
+}
+
+function validateUserForm() {
+  var a = document.forms["adduser"]["phoneNo"].value;
+  var b = document.forms["adduser"]["firstName"].value;
+  var c = document.forms["adduser"]["lastName"].value;
+
+  if (!/^[a-zA-Z\s-]+$/.test(b)){
+    alert("Invalid First Name");
+    return false;
+  }
+  else if  (!/^[a-zA-Z\s]+$/.test(c)) {
+    alert("Invalid Last Name");
+    return false;
+  }
+  else if (!/^\d{11}$/.test(a)) {
+    alert("Invalid Phone Number");
+    return false;
+  }
+}
 
 var addInput = document.getElementById("add");
 var questionLocation = document.getElementById("questions");

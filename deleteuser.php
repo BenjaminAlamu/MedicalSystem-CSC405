@@ -7,8 +7,8 @@
 
 include ("inc/database.php");
 
-//$id = $_POST["id"];
-$id = "6"; //This id will be gotten from the click event
+$id = $_POST["id"];
+
 
 $check = $conn ->query("SELECT * FROM staff_bio WHERE id ='" . $id . "'");
 $check = $check -> fetchAll(PDO::FETCH_ASSOC);
@@ -38,7 +38,7 @@ $conn -> exec($deleteStaff);
 //Get the id
 //Use username to get the id from the login database
 
-$deleteLogin = $conn ->query("DELETE FROM login WHERE username = '" . $username . "'");
+$deleteLogin = $conn ->query("DELETE FROM login_info WHERE username = '" . $username . "'");
 var_dump($deleteLogin);
 $conn -> exec($deleteLogin);
 
