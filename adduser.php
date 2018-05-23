@@ -2,7 +2,8 @@
   session_start();
   require_once("inc/database.php");
 
-$firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $reErr = $noMatchErr = $radErr="";
+$firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $noMatchErr = $radErr="";
+
 ?>
 
 <?php
@@ -13,50 +14,9 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $reErr = $n
     $username = "root";
     $dbname = "hospital_management";
 
-    if(empty($_POST["firstName"])){
-      $firstErr="*First Name Required.";
-    }
-    if(empty($_POST["lastName"])){
-      $secondErr="*Last Name Required.";
-    }
-    if(empty($_POST["phoneNo"])){
-      $phoneErr="*Phone Number Required";
-    }
 
-    if(empty($_POST["homeaddress"])){
-      $addErr="*Address Required.";
-    }
+    $sql = 
 
-    if(empty($_POST["user-name"])){
-      $userErr="*Username required.";
-    }
-
-    if(empty($_POST["pass-word"])){
-      $passErr="*Password Required.";
-    }
-
-    if(empty($_POST["repeatPassword"])){
-      $reErr="*Confirm Password Required.";
-    }
-
-    if(empty($_POST["type"])){
-      $radErr="*Select Staff Type Required.";
-    }
-                  
-
-    $firstname = $_POST["firstName"];
-    $lastname = $_POST["lastName"];
-    $phoneNo = $_POST["phoneNo"];
-    $homeaddress = $_POST["homeaddress"];
-    $user_name = $_POST["user-name"];
-    $pass_word = $_POST["pass-word"];
-    $repeatpassword = $_POST["repeatPassword"];
-
-    if(isset($_POST['type'])){
-      $type = $_POST['type'];
-      }
-    
-    if ($user_name == $pass_word){
       $sql = "INSERT INTO staff_bio (firstname, lastname, phonenumber, homeaddress, staff_type, username)
       VALUES('$firstname', '$lastname', '$phoneNo', '$homeaddress', '$type', '$user_name');
       
@@ -65,11 +25,6 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $reErr = $n
       $conn->exec($sql);
       echo "<script>alert('Staff Added Successfully');</script>";
       $conn = null;
-    }
-    else {
-      echo "<script>alert('Passwords don't match!');</script>";
-    }
-
             }
               ?>
 
@@ -80,32 +35,33 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $reErr = $n
     <link rel="stylesheet" href="css/forms.css">
     <link rel="stylesheet" href="css/main.css">
     <title>Add Staff</title>
+
   </head>
   <body>
     <?php include "inc/header.php"; ?>
   <div id = "content">
     <?php include "inc/adminleft.php"; ?>
       <div class = "rightside">
-          <form method = "post" action ="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+          <form name=adduser method = "post" action ="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <h3>Add Staff</h3>
           <legend><span class = "number">1</span>Personal Information</legend>
-          <?php echo $firstErr;?>
-          <input type ="text" name = "firstName" placeholder = "First Name"></input><br>
-          <?php echo $secondErr;?>
-          <input type ="text" name = "lastName" placeholder = "Last Name"></input><br>
-          <?php echo $phoneErr;?>
-          <input type ="number" name = "phoneNo" placeholder = "Phone Number"></input><br>
-          <?php echo $addErr?>
-          <input type ="textarea" name = "homeaddress" placeholder = "Home Address"></input> <br> 
+
+          <input type ="text" name = "firstName" placeholder = "First Name" required></input><br>
+
+          <input type ="text" name = "lastName" placeholder = "Last Name" required></input><br>
+
+          <input type ="number" name = "phoneNo" placeholder = "Phone Number" required></input><br>
+
+          <input type ="textarea" name = "homeaddress" placeholder = "Home Address" required></input> <br> 
 
           
           <legend><span class = "number">2</span>Login Information</legend>
-          <?php echo $userErr;?>
-          <input type ="text" name = "user-name" placeholder = "Username"></input><br>
-          <?php echo $passErr;?>
-          <input type ="password" name = "pass-word" placeholder = "Password"></input><br>
-          <?php echo $reErr;?>
-          <input type ="password" name = "repeatPassword" placeholder = "Confirm Password"></input><br>
+
+          <input type ="text" name = "user-name" placeholder = "Username" required></input><br>
+
+          <input type ="password" name = "pass-word" placeholder = "Password" required></input><br>
+
+
                     
 
 
@@ -113,11 +69,11 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $reErr = $n
           <legend><span class = "number">3</span>Account Information</legend>
           <h4>Please select an account type</h4>
           <?php echo $radErr;?>
-          <div class = "radioitem"><input type = "radio" name = "type" id ="doctor" value="doctor"><label for = "doctor" class = "label" >Doctor</label><br></div>
+          <div class = "radioitem"><input type = "radio" name = "type" id ="doctor" value="doctor" checked ="checked"><label for = "doctor" class = "label" >Doctor</label><br></div>
                 
           <div class = "radioitem"><input type = "radio" name = "type" id ="supportstaff" value="supportstaff"><label for = "supportstaff" class = "label" >Support Staff</label><br></div>
 
-          <div class = "radioitem"><input type = "radio" name = "type" id ="admin" value="admin"><label for = "admin" class = "label" >Admin</label><br></div>
+          <div class = "radioitem"><input type = "radio" name = "type" id ="admin" value="admin" ><label for = "admin" class = "label" >Admin</label><br></div>
 
           <input id ="submit" type = "submit" value = "Submit">
 
