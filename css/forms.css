@@ -32,7 +32,7 @@ html,body{
       text-align: center;
       margin-top: 50px;
       flex-grow: inherit;
-      min-height: calc(100vh - 150px);
+      min-height: calc(100vh - 130px);
       
   }
 
