@@ -1,5 +1,4 @@
 <?php
-  session_start();
 if ($_POST) {
   $servername = "localhost";
   $username = "root";
