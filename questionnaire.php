@@ -17,10 +17,7 @@ $sql = "CREATE TABLE question" . $title . "  (
     $sql = "INSERT INTO question" . $title . " (question) VALUES ( '" . $title . "' )";
     $conn -> exec($sql);
 
-    //Get the first question of the questionniare and insert into db
-    $question = $_POST["question"];
-    $sql = "INSERT INTO question" . $title . " (question) VALUES ( '" . $question . "' )";
-    $conn -> exec($sql);
+
     
     //Check if other fields where created and all their value into the database
     for($i=2; $i < $count; $i++ ){
@@ -31,5 +28,6 @@ $sql = "CREATE TABLE question" . $title . "  (
         echo $_POST["question" . $i];
         
     }
+    header('Location:displayquestionnaire.php');
 
 ?>

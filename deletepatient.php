@@ -23,6 +23,7 @@ if(empty($check)){
 //Delete the patients data from the patient bio database
 $deletePatient = "DELETE FROM patient_bio WHERE id='". $id. "'";
 $conn -> exec($deletePatient);
+header('Location:staff.php');
 
 
 

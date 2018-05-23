@@ -6,10 +6,10 @@ if (isset($_GET["prod"])){
     echo $sql;
     $conn -> exec($sql);
 
-    //Redirect
+    header('Location:displayquestionnaire.php');
 }
 else{
-    //Redirect to home page
+    header('Location:admin.php');
 }
 
 

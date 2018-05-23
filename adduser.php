@@ -33,6 +33,7 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $noMatchErr
                           
         $conn->exec($sql);
         echo "<script>alert('Staff Added Successfully');</script>";
+        echo "<script>window.location= 'admin.php';</script>";
         $conn = null;
 
       /*}

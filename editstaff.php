@@ -20,6 +20,7 @@
       $stmt->execute();
 
       echo "<script>alert('Staff records updated successfully');</script>";
+      echo "<script>window.location = 'admin.php';</script>";
     }
     catch(PDOException $e)
     {
@@ -45,23 +46,44 @@
 
 
       <div class = "rightside">
+      <?php
+      $id = $_GET['id'];
+      
+      include "inc/database.php";
+      
+      $bio = $conn -> query("SELECT * FROM staff_bio where id = '" . $id . "'");
+      $bio = $bio -> fetchAll(PDO::FETCH_ASSOC);
+      
+      foreach($bio as $bioResult){
+        
+      }
+
+      $log = $conn -> query("SELECT * FROM login_info where id = '" . $id . "'");
+      $log = $log -> fetchAll(PDO::FETCH_ASSOC);
+
+      foreach($log as $logResult){
+        
+      }
+
+      ?>
         <form method="post" action="<?php echo $_SERVER['REQUEST_URI'];?>" name="editstaff" onsubmit="return validateForm(this);">
           <h3>Edit Staff</h3>
+          
           <legend><span class = "number">1</span>Personal Information</legend>
-          <input type ="text" name="firstName" placeholder = "First Name" required></input><br>
+          <input type ="text" name="firstName" placeholder = "First Name" required value = "<?php echo $bioResult['firstname'];?>" ></input><br>
 
-          <input type ="text" name="lastName" placeholder = "Last Name" required></input><br>
+          <input type ="text" name="lastName" placeholder = "Last Name" required value = "<?php echo $bioResult['lastname'];?>"></input><br>
 
-          <input type ="number" name="phoneNo" placeholder = "Phone Number" required></input><br>
+          <input type ="number" name="phoneNo" placeholder = "Phone Number" required value = "<?php echo $bioResult['phonenumber'];?>"></input><br>
 
-          <input type ="textarea" name="homeaddress" placeholder = "Home Address" required></input> <br>
+          <input type ="textarea" name="homeaddress" placeholder = "Home Address" required value = "<?php echo $bioResult['homeaddress'];?>"></input> <br>
 
 
           <legend><span class = "number">2</span>Login Information</legend>
 
-          <input type ="text" name = "user-name" placeholder = "Username"></input><br>
+          <input type ="text" name = "user-name" placeholder = "Username" value = "<?php echo $logResult['username'];?>"></input><br>
 
-          <input type ="password" name = "pass-word" placeholder = "Password"></input><br>
+          <input type ="password" name = "pass-word" placeholder = "Password" value = "<?php echo $logResult['pass_word'];?>"></input><br>
 
           <input id ="submit" type = "submit" value = "Submit">
 
