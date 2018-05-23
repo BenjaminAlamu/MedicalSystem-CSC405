@@ -58,7 +58,7 @@
            echo "<li><p>Doctor Name: " . $result['staffName'] . "</p></li>";
            echo "<li><p>Doctor Notes: " . $result['doctorsNotes'] . "</p></li>";
            echo "<li><p>Prescription: " . $result['prescription'] . "</p></li>";
-           echo "<li><p>Session Bill: N" . $result['sessionCost'] . "</p></li>";
+           echo "<li><p>Session Bill: N " . $result['sessionCost'] . "</p></li>";
            echo "</ul>";
         }
         
