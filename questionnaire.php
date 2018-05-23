@@ -31,5 +31,6 @@ $sql = "CREATE TABLE question" . $title . "  (
         echo $_POST["question" . $i];
         
     }
+    header('Location:displayquestionnaire.php');
 
 ?>
