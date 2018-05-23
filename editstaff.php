@@ -15,7 +15,7 @@
     $password = $_POST["pass-word"];
     try{
       $sql = "UPDATE staff_bio SET firstname='$firstName', lastname='$lastName', phonenumber='$phoneNo', homeaddress='$homeaddress' WHERE id ='$id';
-      UPDATE login SET username='$username', pass_word='$password' WHERE id ='$id';";
+      UPDATE login_info SET username='$username', pass_word='$password' WHERE id ='$id';";
       $stmt = $conn->prepare($sql);
 
       $stmt->execute();
