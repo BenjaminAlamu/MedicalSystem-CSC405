@@ -12,6 +12,7 @@ $doctorsNotes = $_POST['doctorNotes'];
 $prescription = $_POST['prescription'];
 $sessionCost = $_POST['price'];
 
+
 $sql = "INSERT INTO patientrecord (patientID, staffID, staffName, patientComplaint, doctorsNotes, prescription, sessionCost) VALUES ('$patientID','$staffID','$staffname','$patientComplaint','$doctorsNotes', '$prescription', '$sessionCost')";
 echo $sql;
 
