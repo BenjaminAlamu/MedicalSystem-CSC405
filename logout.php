@@ -1,12 +1,12 @@
 <?php
-//session start
+//start session
 session_start();
 if(isset($_SESSION['id']) && isset($_SESSION['username'])){
-    //unsets all session variables
+    //unset all session variables
     session_unset();
-    //destroys all session variables
+    //destroy all session variables
     session_destroy();
     //redirect to index page
-    header("Location:index.php");
+    header("Location: index.php");
 }
 ?>
