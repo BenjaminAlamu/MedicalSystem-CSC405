@@ -7,7 +7,7 @@
 
 include ("inc/database.php");
 
-$id = $_POST["id"];
+$id = $_GET["id"];
 
 
 $check = $conn ->query("SELECT * FROM staff_bio WHERE id ='" . $id . "'");
@@ -26,7 +26,7 @@ foreach($check as $result){
     $username = $result["username"];
 }
 
-echo $username;
+//echo $username;
 
 //Delete the users data from the staff bio database
 $deleteStaff = "DELETE FROM staff_bio WHERE id='" .$id . "'";
@@ -39,7 +39,8 @@ $conn -> exec($deleteStaff);
 //Use username to get the id from the login database
 
 $deleteLogin = $conn ->query("DELETE FROM login_info WHERE username = '" . $username . "'");
-var_dump($deleteLogin);
+//var_dump($deleteLogin);
 $conn -> exec($deleteLogin);
+header('Location:admin.php');
 
 
