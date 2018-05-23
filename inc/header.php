@@ -14,7 +14,7 @@ session_start();
 <nav>
     <ul>
         <li id="logo">Hospital Management System</li>
-        <li id = "username">User Name</li>
+        <li id = "username"><?php echo $_SESSION['staff_name'] ?></li>
     </ul>
 
 </nav>
