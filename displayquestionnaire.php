@@ -36,5 +36,7 @@ while($rows = $query->fetch(PDO::FETCH_NUM)){
 echo "</div>";
 
 ?>
+
+<?php include "inc/footer.php"; ?>
 </body>
 </html>

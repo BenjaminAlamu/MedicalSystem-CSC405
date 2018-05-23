@@ -33,6 +33,7 @@
 <input type = "submit" value = "Submit">
 </form>
 </div>
+<?php include "inc/footer.php"; ?>
 </body>
 <script src="js/app.js"></script>
 </html> 
