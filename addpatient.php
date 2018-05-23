@@ -49,7 +49,7 @@ if ($_POST) {
         ?>
       </div>
       <div class = "rightside">
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="addpatient" onsubmit="return validateForm();" >
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="addpatient" onsubmit="return validateForm(this);" >
           <h3>Add Patient</h3>
           <legend><span class = "number">1</span>Personal Information</legend>
           <input type="text" name="firstName" placeholder="First Name" required></input><br>
