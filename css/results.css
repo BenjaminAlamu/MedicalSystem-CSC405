@@ -1,0 +1,36 @@
+.result-box{
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+h3 {
+    text-align: center;
+}
+
+.result-item {
+    width: 23%;
+    box-sizing: border-box;
+    
+    box-shadow: 1px 1px 7px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    justify-content: center;
+}
+
+a {
+    border: none;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #6A8599;
+    color: white;
+    margin: 2px;
+    /*display: inline-block;*/
+}

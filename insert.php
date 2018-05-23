@@ -12,18 +12,18 @@
     <?php
     include "inc/database.php";
     include "inc/header.php";
-    include "inc/doctorleft.php";
-    // if (isset($_GET["id"])){
-    //     $patientid = $_GET["id"];
+    if ($_SESSION['staff_type'] == "doctor"){
+        include "inc/doctorleft.php";
+      }
+      elseif ($_SESSION['staff_type'] == "supportstaff"){
+        include "inc/supportleft.php";
+      }
+
+    if (!isset($_GET["id"])){
+        header('Location:staff.php');
+    }
     
-    //     //Redirect
-    // }
-    // else{
-    //     //Redirect to home page
-    // }
-    
-    $patientid = 2;
-    
+    $patientid = $_GET["id"];
     //Get patient data from db
     $sql = $conn -> query("SELECT * FROM patient_bio WHERE id = $patientid");
           $sql = $sql -> fetchAll(PDO::FETCH_ASSOC);
