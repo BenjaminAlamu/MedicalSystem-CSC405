@@ -1,12 +1,12 @@
 <?php
 session_start();
-
 ?>
 <!DOCTYPE html>
     <head>
       <link rel="stylesheet" href="css/styles.css">
+      <link rel ="stylesheet" href ="css/background.css">
     </head>
-    <body background="img/backgroundSetup.jpg">
+    <body>
    
     <header>
 <nav>
@@ -35,4 +35,3 @@ session_start();
         <?php include "inc/footer.php"; ?>
     </body>
 </html>
-
