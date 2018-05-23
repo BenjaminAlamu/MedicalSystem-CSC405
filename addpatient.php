@@ -1,20 +1,12 @@
 <?php
-  session_start();
+include "inc/database.php";
 if ($_POST) {
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "hospital_management";
-
   $firstName = $_POST["firstName"];
   $lastName = $_POST["lastName"];
   $phoneNo = $_POST["phoneNo"];
   $address = $_POST["address"];
 
   try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "INSERT INTO `patient_bio` (`firstname`, `lastname`, `phonenum`, `address`)
             VALUES('$firstName', '$lastName', '$phoneNo', '$address')";
     $conn->exec($sql);
@@ -37,7 +29,7 @@ if ($_POST) {
   </head>
   <body>
     <?php include "inc/header.php"; ?>
-    
+
     <div id = "content">
       <div class = "leftside">
         <?php
@@ -50,7 +42,7 @@ if ($_POST) {
         ?>
       </div>
       <div class = "rightside">
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="addpatient" onsubmit="return validateForm();" >
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="addpatient" onsubmit="return validateForm(this);" >
           <h3>Add Patient</h3>
           <legend><span class = "number">1</span>Personal Information</legend>
           <input type="text" name="firstName" placeholder="First Name" required></input><br>
@@ -70,4 +62,3 @@ if ($_POST) {
     <script src="js/app.js"></script>
   </body>
 </html>
-

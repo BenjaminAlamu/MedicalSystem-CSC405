@@ -1,5 +1,4 @@
 <?php
-  session_start();
   require_once("inc/database.php");
 
 $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $noMatchErr = $radErr="";
@@ -14,17 +13,36 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $noMatchErr
     $username = "root";
     $dbname = "hospital_management";
 
-
-    $sql = 
-
-      $sql = "INSERT INTO staff_bio (firstname, lastname, phonenumber, homeaddress, staff_type, username)
-      VALUES('$firstname', '$lastname', '$phoneNo', '$homeaddress', '$type', '$user_name');
+    $firstname = $_POST["firstName"];
+    $lastname = $_POST["lastName"];
+    $phoneNo = $_POST["phoneNo"];
+    $homeaddress = $_POST["homeaddress"];
+    $user_name = $_POST["user-name"];
+    $pass_word = $_POST["pass-word"];
+    $type = $_POST['type'];
       
-      INSERT INTO login_info(username, pass_word, staff_type) VALUES ('$user_name', '$pass_word' , '$type');";
-                        
-      $conn->exec($sql);
-      echo "<script>alert('Staff Added Successfully');</script>";
-      $conn = null;
+
+     /* $sthandler= $conn -> prepare("SELECT * FROM login_info WHERE username = '$username'");
+      $sthandler -> execute();
+
+      if ($sthandler->rowCount() == 0){*/
+        $sql = "INSERT INTO staff_bio (firstname, lastname, phonenumber, homeaddress, staff_type, username)
+        VALUES('$firstname', '$lastname', '$phoneNo', '$homeaddress', '$type', '$user_name');
+        
+        INSERT INTO login_info(username, pass_word, staff_type) VALUES ('$user_name', '$pass_word' , '$type');";
+                          
+        $conn->exec($sql);
+        echo "<script>alert('Staff Added Successfully');</script>";
+        $conn = null;
+
+      /*}
+
+      else {
+        echo "<script> alert('Username has been taken'); 
+        document.getElementByTagName('adduser').onsubmit = 'return false'; </script>";
+      }*/
+
+
             }
               ?>
 
@@ -34,6 +52,7 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $noMatchErr
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/forms.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src = "js/app.js" type = "text/javascript"></script>
     <title>Add Staff</title>
 
   </head>
@@ -42,7 +61,7 @@ $firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $noMatchErr
   <div id = "content">
     <?php include "inc/adminleft.php"; ?>
       <div class = "rightside">
-          <form name=adduser method = "post" action ="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+          <form name="adduser" method = "post" onsubmit = "return validateUserForm()" action ="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <h3>Add Staff</h3>
           <legend><span class = "number">1</span>Personal Information</legend>
 

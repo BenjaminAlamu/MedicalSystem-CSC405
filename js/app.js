@@ -1,7 +1,7 @@
-function validateForm() {
-  var w = document.forms["addpatient"]["phoneNo"].value;
-  var x = document.forms["addpatient"]["firstName"].value;
-  var y = document.forms["addpatient"]["lastName"].value;
+function validateForm(form) {
+  var w = document.forms[form.name]["phoneNo"].value;
+  var x = document.forms[form.name]["firstName"].value;
+  var y = document.forms[form.name]["lastName"].value;
 
   if ((!/^[a-zA-Z\s-]+$/.test(x)) || (!/^[a-zA-Z\s]+$/.test(y))) {
     alert("Invalid Name");
@@ -12,6 +12,7 @@ function validateForm() {
     return false;
   }
 }
+
 var addInput = document.getElementById("add");
 var questionLocation = document.getElementById("questions");
 let i = 1;

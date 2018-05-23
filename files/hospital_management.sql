@@ -2,10 +2,17 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD
 -- Host: 127.0.0.1
 -- Generation Time: May 23, 2018 at 01:46 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
+=======
+-- Host: 127.0.0.1:3306
+-- Generation Time: May 23, 2018 at 07:52 AM
+-- Server version: 5.7.19
+-- PHP Version: 5.6.31
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,12 +35,23 @@ SET time_zone = "+00:00";
 -- Table structure for table `login_info`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `login_info` (
   `id` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
   `pass_word` varchar(10) NOT NULL,
   `staff_type` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+DROP TABLE IF EXISTS `login_info`;
+CREATE TABLE IF NOT EXISTS `login_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `pass_word` varchar(10) NOT NULL,
+  `staff_type` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
 
 --
 -- Dumping data for table `login_info`
@@ -79,13 +97,20 @@ INSERT INTO `patientrecord` (`complaintID`, `patientID`, `staffID`, `staffName`,
 -- Table structure for table `patient_bio`
 --
 
-CREATE TABLE `patient_bio` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `patient_bio`;
+CREATE TABLE IF NOT EXISTS `patient_bio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
   `phonenum` varchar(15) NOT NULL,
+<<<<<<< HEAD
   `address` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+  `address` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
 
 --
 -- Dumping data for table `patient_bio`
@@ -95,6 +120,7 @@ INSERT INTO `patient_bio` (`id`, `firstname`, `lastname`, `phonenum`, `address`)
 (1, 'Christian', 'Daniels', '08011111111', '24, Festac Drive Mile 2'),
 (2, 'Asaph', 'Mic', '08022222222', 'F206, Enijokwu Hall Unilag'),
 (3, 'Daniel', 'Abudu', '08135608364', 'Unilag road, Akoka, Yaba, Lagos');
+<<<<<<< HEAD
 
 -- --------------------------------------------------------
 
@@ -114,13 +140,16 @@ CREATE TABLE `question` (
 INSERT INTO `question` (`id`, `question`) VALUES
 (1, ''),
 (2, '');
+=======
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `staff_bio`
+-- Table structure for table `question`
 --
 
+<<<<<<< HEAD
 CREATE TABLE `staff_bio` (
   `id` int(11) NOT NULL,
   `firstname` varchar(30) NOT NULL,
@@ -130,11 +159,20 @@ CREATE TABLE `staff_bio` (
   `staff_type` varchar(20) NOT NULL,
   `username` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+DROP TABLE IF EXISTS `question`;
+CREATE TABLE IF NOT EXISTS `question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `question` varchar(300) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
 
 --
--- Dumping data for table `staff_bio`
+-- Dumping data for table `question`
 --
 
+<<<<<<< HEAD
 INSERT INTO `staff_bio` (`id`, `firstname`, `lastname`, `phonenumber`, `homeaddress`, `staff_type`, `username`) VALUES
 (1, 'Benjamin ', 'Alamu', '08103374289', 'Lagos', 'admin', 'admin1'),
 (2, 'Daniel', 'Abudu', '08011111111', 'Mariere Hall, Unilag', 'admin', 'admin2'),
@@ -142,12 +180,16 @@ INSERT INTO `staff_bio` (`id`, `firstname`, `lastname`, `phonenumber`, `homeaddr
 (4, 'Nifise', 'Oduduwa', '08033333333', 'Somewhere in Lagos', 'doctor', 'doc2'),
 (5, 'Christian', 'Daniels', '08044444444', 'Jaja Hall, Unilag', 'supportstaff', 'support1'),
 (6, 'Micheal', 'Ejeh', '08055555555', 'Enijokwu Hall, Unilag', 'supportstaff', 'support2');
+=======
+INSERT INTO `question` (`id`, `question`) VALUES
+(1, ''),
+(2, '');
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
+
+-- --------------------------------------------------------
 
 --
--- Indexes for dumped tables
---
-
---
+<<<<<<< HEAD
 -- Indexes for table `login_info`
 --
 ALTER TABLE `login_info`
@@ -210,6 +252,34 @@ ALTER TABLE `question`
 --
 ALTER TABLE `staff_bio`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+=======
+-- Table structure for table `staff_bio`
+--
+
+DROP TABLE IF EXISTS `staff_bio`;
+CREATE TABLE IF NOT EXISTS `staff_bio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `phonenumber` varchar(15) NOT NULL,
+  `homeaddress` varchar(200) NOT NULL,
+  `staff_type` varchar(20) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `staff_bio`
+--
+
+INSERT INTO `staff_bio` (`id`, `firstname`, `lastname`, `phonenumber`, `homeaddress`, `staff_type`, `username`) VALUES
+(1, 'Benjamin ', 'Alamu', '08103374289', 'Lagos', 'admin', 'admin1'),
+(2, 'Daniel', 'Abudu', '08011111111', 'Mariere Hall, Unilag', 'admin', 'admin2'),
+(3, 'Amaka', 'Ezeoke', '08022222222', 'Fagunwa Hall, Unilag', 'doctor', 'doc1'),
+(4, 'Nifise', 'Oduduwa', '08033333333', 'Somewhere in Lagos', 'doctor', 'doc2'),
+(5, 'Christian', 'Daniels', '08044444444', 'Jaja Hall, Unilag', 'supportstaff', 'support1'),
+(6, 'Micheal', 'Ejeh', '08055555555', 'Enijokwu Hall, Unilag', 'supportstaff', 'support2');
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

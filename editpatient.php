@@ -1,97 +1,62 @@
 <?php
-// including the database connection file
-include_once("inc/header.php");
- 
-if(isset($_POST['update']))
-{    
-    $id = $_POST['id'];
-    
-    $firstname=$_POST['firstname'];
-    $lastname=$_POST['lastname'];
-    $phoneNo=$_POST['phoneNo']; 
-    $address=$_POST['address'];    
-    
-    // checking empty fields
-    if(empty($firstname) || empty($lastname) || empty($phoneNo) || empty($address)) {            
-        if(empty($firstname)) {
-            echo "<font color='red'>firstname field is empty.</font><br/>";
-        }
-        
-        if(empty($lastname)) {
-            echo "<font color='red'>lastname field is empty.</font><br/>";
-        }
-        
-        
-        if(empty($phoneNo)) {
-            echo "<font color='red'>phoneNo field is empty.</font><br/>";
-        }
 
-        if(empty($address)) {
-            echo "<font color='red'>address field is empty.</font><br/>";
-        }        
-    } else {    
+  include "inc/database.php";
+  $id = $_GET['id'];
+if($_POST) {
 
 
-        //updating the table
-        $result = mysqli_query($mysqli, "UPDATE users SET firstname='$firstname', lastname='$lastname',phoneNo='$phoneNo'  address='$address' WHERE id=$id");
-        
-        //redirectig to the display page. In our case, it is index.php
-        header("Location: index.php");
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $phoneNo = $_POST['phoneNo'];
+    $homeAddress = $_POST['homeaddress'];
+
+    try{
+      $sql = "UPDATE patient_bio SET firstname='$firstName', lastname='$lastName', phonenum='$phoneNo', address='$homeAddress' WHERE id ='$id'";
+      $stmt = $conn->prepare($sql);
+
+      $stmt->execute();
+
+      echo "<script>alert('Patient records updated successfully');</script>";
     }
-}
-?>
-<?php
-//getting id from url
-$id = $_GET['id'];
- 
-//selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM users WHERE id=$id");
- 
-while($res = mysqli_fetch_array($result))
-{   
+    catch(PDOException $e)
+    {
+      echo $sql1 . "<br>" . $e->getMessage();
+    }
+    $conn = null;
+  }
 
-     $servername = "localhost";
-          $username = "root";
-          $password = "";
-          $dbname = "hospital_management";
-    $firstname = $res['firstname'];
-    $lastname = $res['lastname'];
-    $phoneNo = $res['phoneNo'];
-    $address = $res['address'];
-}
 ?>
-<html>
-<head>    
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
     <title>Edit Patient</title>
-</head>
- 
-<body>
-    <a href="index.php">Home</a>
-    <br/><br/>
-    
-    <form name="form1" method="post" action="edit.php">
-        <table border="0">
-            <tr> 
-                <td>FirstName</td>
-                <td><input type="text" name="firstname" value="<?php echo $firstname;?>"></td>
-            </tr>
-            <tr> 
-                <td>LastName</td>
-                <td><input type="text" name="lastname" value="<?php echo $lastname;?>"></td>
-            </tr>
-            <tr> 
-                <td>PhoneNo</td>
-                <td><input type="text" name="phoneNo" value="<?php echo $phoneNo;?>"></td>
-            </tr>
-            <tr> 
-                <td>Address</td>
-                <td><input type="text" name="address" value="<?php echo $address;?>"></td>
-            </tr>
-            <tr>
-                <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-                <td><input type="submit" name="update" value="Update"></td>
-            </tr>
-        </table>
-    </form>
-</body>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+    <?php include 'inc/header.php'; ?>
+    <div id="content">
+      <?php include "inc/doctorleft.php"; ?>
+      <div class="rightside">
+        <form method="post" action="<?php echo $_SERVER['REQUEST_URI'];?>" name="editpatient" onsubmit="return validateForm(this);">
+          <br><br>
+          <h3>Edit Patient</h3>
+          <legend><span class = "number">1</span>Personal Information</legend>
+          <input type ="text" name="firstName" placeholder = "First Name" required></input><br>
+
+          <input type ="text" name="lastName" placeholder = "Last Name" required></input><br>
+
+          <input type ="number" name="phoneNo" placeholder = "Phone Number" required></input><br>
+
+          <input type ="textarea" name="homeaddress" placeholder = "Home Address" required></input> <br>
+
+          <input id ="submit" type = "submit" value = "Submit">
+        </form>
+      </div>
+    </div>
+    <?php include "inc/footer.php"; ?>
+    <script src="js/app.js"></script>
+  </body>
 </html>
