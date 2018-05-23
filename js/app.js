@@ -30,6 +30,7 @@ addInput.addEventListener("click", (event) => {
     input.name = "question" + i;
     input.className = "block";
     input.placeholder = "Enter a question";
+    
 
 
     //Append input to form fields

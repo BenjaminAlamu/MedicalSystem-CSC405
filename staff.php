@@ -13,7 +13,7 @@
 
   <?php include "inc/header.php"; ?>
   <div id = "content">
-      <div class = "leftside">
+      
         <?php
         if ($_SESSION['staff_type'] == "doctor"){
           include "inc/doctorleft.php";
@@ -22,7 +22,7 @@
           include "inc/supportleft.php";
         }
         ?>
-      </div>
+      
 
   <div class = "rightside">
       <form id = "search" method = "post" action = "search-patient.php">

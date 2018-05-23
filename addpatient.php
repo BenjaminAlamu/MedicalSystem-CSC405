@@ -31,7 +31,7 @@ if ($_POST) {
     <?php include "inc/header.php"; ?>
 
     <div id = "content">
-      <div class = "leftside">
+      
         <?php
         if ($_SESSION['staff_type'] == "doctor"){
           include "inc/doctorleft.php";
@@ -40,7 +40,7 @@ if ($_POST) {
           include "inc/supportleft.php";
         }
         ?>
-      </div>
+      
       <div class = "rightside">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="addpatient" onsubmit="return validateForm(this);" >
           <h3>Add Patient</h3>
