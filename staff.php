@@ -45,13 +45,8 @@
               echo "<a href = 'editpatient.php?id=". $result["id"] . "'>Edit</a>";
               echo "<a href = 'deletepatient.php?id=". $result["id"] . "'>Delete</a>";
               echo "<a href = 'insert.php?id=". $result["id"] . "'>Add Patient History</a>";
-<<<<<<< HEAD
-              echo "<a href = 'view.php?id=". $result["id"] . "'>View</a>";
-              
-=======
-              echo "<a href = 'downloadpatient.php?id=". $result["id"] . "'>Download</a>";
+              echo "<a href = 'view.php?id=". $result["id"] . "'>View Patient History</a>";
               echo '</div>';
->>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
           }
           echo '</div>';
           ?>

@@ -17,12 +17,15 @@ if($_POST) {
       $stmt->execute();
 
       echo "<script>alert('Patient records updated successfully');</script>";
+      echo "<script>window.location = 'staff.php';</script>";
+      
     }
     catch(PDOException $e)
     {
       echo $sql1 . "<br>" . $e->getMessage();
     }
     $conn = null;
+    
   }
 
 ?>
@@ -38,19 +41,42 @@ if($_POST) {
   <body>
     <?php include 'inc/header.php'; ?>
     <div id="content">
-      <?php include "inc/doctorleft.php"; ?>
+      <?php         
+      if ($_SESSION['staff_type'] == "doctor"){
+          include "inc/doctorleft.php";
+        }
+        elseif ($_SESSION['staff_type'] == "supportstaff"){
+          include "inc/supportleft.php";
+        }
+      
+     
+      ?>
       <div class="rightside">
+      <?php
+      $id = $_GET['id'];
+      
+      include "inc/database.php";
+      
+      $sql = $conn -> query("SELECT * FROM patient_bio where id = '" . $id . "'");
+      $sql = $sql -> fetchAll(PDO::FETCH_ASSOC);
+      $firstname = "";
+
+      foreach($sql as $result){
+        
+      }
+
+      ?>
         <form method="post" action="<?php echo $_SERVER['REQUEST_URI'];?>" name="editpatient" onsubmit="return validateForm(this);">
           <br><br>
           <h3>Edit Patient</h3>
           <legend><span class = "number">1</span>Personal Information</legend>
-          <input type ="text" name="firstName" placeholder = "First Name" required></input><br>
+          <input type ="text" name="firstName" placeholder = "First Name" required value = "<?php echo $result['firstname'];?>" ></input><br>
 
-          <input type ="text" name="lastName" placeholder = "Last Name" required></input><br>
+          <input type ="text" name="lastName" placeholder = "Last Name" required value = "<?php echo $result['lastname'];?>"></input><br>
 
-          <input type ="number" name="phoneNo" placeholder = "Phone Number" required></input><br>
+          <input type ="number" name="phoneNo" placeholder = "Phone Number" required value = "<?php echo $result['phonenum'];?>"></input><br>
 
-          <input type ="textarea" name="homeaddress" placeholder = "Home Address" required></input> <br>
+          <input type ="textarea" name="homeaddress" placeholder = "Home Address" required value = "<?php echo $result['address'];?>"></input> <br>
 
           <input id ="submit" type = "submit" value = "Submit">
         </form>
