@@ -2,10 +2,17 @@
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD
+-- Host: 127.0.0.1
+-- Generation Time: May 23, 2018 at 01:46 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
+=======
 -- Host: 127.0.0.1:3306
 -- Generation Time: May 23, 2018 at 07:52 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,6 +35,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `login_info`
 --
 
+<<<<<<< HEAD
+CREATE TABLE `login_info` (
+  `id` int(11) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `pass_word` varchar(10) NOT NULL,
+  `staff_type` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
 DROP TABLE IF EXISTS `login_info`;
 CREATE TABLE IF NOT EXISTS `login_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -36,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `login_info` (
   `staff_type` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
 
 --
 -- Dumping data for table `login_info`
@@ -52,6 +68,32 @@ INSERT INTO `login_info` (`id`, `username`, `pass_word`, `staff_type`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `patientrecord`
+--
+
+CREATE TABLE `patientrecord` (
+  `complaintID` int(11) NOT NULL,
+  `patientID` int(11) NOT NULL,
+  `staffID` int(11) NOT NULL,
+  `staffName` varchar(50) DEFAULT NULL,
+  `patientComplaint` varchar(200) DEFAULT NULL,
+  `doctorsNotes` varchar(200) DEFAULT NULL,
+  `prescription` varchar(200) DEFAULT NULL,
+  `sessionCost` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `patientrecord`
+--
+
+INSERT INTO `patientrecord` (`complaintID`, `patientID`, `staffID`, `staffName`, `patientComplaint`, `doctorsNotes`, `prescription`, `sessionCost`) VALUES
+(6, 3, 4, 'Nifise Oduduwa', 'School is a scam', 'So you are just knowing', 'Painkillers Suppliments ', 5500),
+(7, 3, 4, 'Nifise Oduduwa', 'Test twp', 'Test two doctor notes', 'Painkillers Surgery ', 62500),
+(8, 2, 3, 'Amaka Ezeoke', 'Testing another doctor', 'Doctor Notes', 'Suppliments Surgery ', 53800);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `patient_bio`
 --
 
@@ -61,9 +103,14 @@ CREATE TABLE IF NOT EXISTS `patient_bio` (
   `firstname` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
   `phonenum` varchar(15) NOT NULL,
+<<<<<<< HEAD
+  `address` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
   `address` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
 
 --
 -- Dumping data for table `patient_bio`
@@ -73,6 +120,7 @@ INSERT INTO `patient_bio` (`id`, `firstname`, `lastname`, `phonenum`, `address`)
 (1, 'Christian', 'Daniels', '08011111111', '24, Festac Drive Mile 2'),
 (2, 'Asaph', 'Mic', '08022222222', 'F206, Enijokwu Hall Unilag'),
 (3, 'Daniel', 'Abudu', '08135608364', 'Unilag road, Akoka, Yaba, Lagos');
+<<<<<<< HEAD
 
 -- --------------------------------------------------------
 
@@ -80,12 +128,10 @@ INSERT INTO `patient_bio` (`id`, `firstname`, `lastname`, `phonenum`, `address`)
 -- Table structure for table `question`
 --
 
-DROP TABLE IF EXISTS `question`;
-CREATE TABLE IF NOT EXISTS `question` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `question` varchar(300) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+CREATE TABLE `question` (
+  `id` int(11) NOT NULL,
+  `question` varchar(300) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `question`
@@ -94,10 +140,119 @@ CREATE TABLE IF NOT EXISTS `question` (
 INSERT INTO `question` (`id`, `question`) VALUES
 (1, ''),
 (2, '');
+=======
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `question`
+--
+
+<<<<<<< HEAD
+CREATE TABLE `staff_bio` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `phonenumber` varchar(15) NOT NULL,
+  `homeaddress` varchar(200) NOT NULL,
+  `staff_type` varchar(20) NOT NULL,
+  `username` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+=======
+DROP TABLE IF EXISTS `question`;
+CREATE TABLE IF NOT EXISTS `question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `question` varchar(300) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
+
+--
+-- Dumping data for table `question`
+--
+
+<<<<<<< HEAD
+INSERT INTO `staff_bio` (`id`, `firstname`, `lastname`, `phonenumber`, `homeaddress`, `staff_type`, `username`) VALUES
+(1, 'Benjamin ', 'Alamu', '08103374289', 'Lagos', 'admin', 'admin1'),
+(2, 'Daniel', 'Abudu', '08011111111', 'Mariere Hall, Unilag', 'admin', 'admin2'),
+(3, 'Amaka', 'Ezeoke', '08022222222', 'Fagunwa Hall, Unilag', 'doctor', 'doc1'),
+(4, 'Nifise', 'Oduduwa', '08033333333', 'Somewhere in Lagos', 'doctor', 'doc2'),
+(5, 'Christian', 'Daniels', '08044444444', 'Jaja Hall, Unilag', 'supportstaff', 'support1'),
+(6, 'Micheal', 'Ejeh', '08055555555', 'Enijokwu Hall, Unilag', 'supportstaff', 'support2');
+=======
+INSERT INTO `question` (`id`, `question`) VALUES
+(1, ''),
+(2, '');
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
+
+-- --------------------------------------------------------
+
+--
+<<<<<<< HEAD
+-- Indexes for table `login_info`
+--
+ALTER TABLE `login_info`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `patientrecord`
+--
+ALTER TABLE `patientrecord`
+  ADD PRIMARY KEY (`complaintID`);
+
+--
+-- Indexes for table `patient_bio`
+--
+ALTER TABLE `patient_bio`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `question`
+--
+ALTER TABLE `question`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `staff_bio`
+--
+ALTER TABLE `staff_bio`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `login_info`
+--
+ALTER TABLE `login_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `patientrecord`
+--
+ALTER TABLE `patientrecord`
+  MODIFY `complaintID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `patient_bio`
+--
+ALTER TABLE `patient_bio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `question`
+--
+ALTER TABLE `question`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `staff_bio`
+--
+ALTER TABLE `staff_bio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+=======
 -- Table structure for table `staff_bio`
 --
 
@@ -124,6 +279,7 @@ INSERT INTO `staff_bio` (`id`, `firstname`, `lastname`, `phonenumber`, `homeaddr
 (4, 'Nifise', 'Oduduwa', '08033333333', 'Somewhere in Lagos', 'doctor', 'doc2'),
 (5, 'Christian', 'Daniels', '08044444444', 'Jaja Hall, Unilag', 'supportstaff', 'support1'),
 (6, 'Micheal', 'Ejeh', '08055555555', 'Enijokwu Hall, Unilag', 'supportstaff', 'support2');
+>>>>>>> 4a07d075b5834e0f3e202df8420090caa392c4a5
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
