@@ -1,13 +1,13 @@
 <?php
   require_once("inc/database.php");
 
-$firstErr = $secondErr = $phoneErr = $addErr = $userErr = $passErr = $noMatchErr = $radErr="";
 
 ?>
 
 <?php
   if($_POST){
 
+    
     $servername = "localhost";
     $password = "";
     $username = "root";
