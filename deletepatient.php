@@ -7,12 +7,13 @@
 
 include ("inc/database.php");
 
-$id = $_POST["id"];
+$id = $_GET["id"];
 
 
 //Check if id is in the database
 $check = $conn ->query("SELECT * FROM patient_bio WHERE id ='" . $id ."'");
 $check = $check -> fetchAll(PDO::FETCH_ASSOC);
+var_dump($check);
 
 if(empty($check)){
     echo "Id not found";

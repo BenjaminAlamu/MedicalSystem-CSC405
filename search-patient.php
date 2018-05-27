@@ -11,7 +11,16 @@
   <body>
 
   <?php include "inc/header.php"; ?>
-  <?php include "inc/adminleft.php"; ?>
+  <?php
+        if ($_SESSION['staff_type'] == "doctor"){
+          include "inc/doctorleft.php";
+        }
+        elseif ($_SESSION['staff_type'] == "supportstaff"){
+          include "inc/supportleft.php";
+        }
+        ?>
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio recusandae, sed nulla commodi, nemo odit maiores in, ut modi quas consequatur repellendus qui excepturi ipsum ullam. Unde quasi, vero laudantium labore adipisci iusto harum laborum sint error velit non, repudiandae odio consequatur doloribus ipsa corporis illum sed quo? Eligendi corporis sint illo impedit quae mollitia, quas quo, dolor ut fugiat tempora debitis laudantium at tenetur, natus odio voluptatem nemo. Laudantium maiores sit tempora culpa reiciendis enim facere temporibus aliquam sint, placeat asperiores perferendis necessitatibus suscipit ea repudiandae vel quis architecto consequuntur nostrum cumque quibusdam deleniti! Provident, itaque esse incidunt iste quas libero laudantium eos molestiae id in? Vel nisi nostrum tenetur veritatis assumenda eos minus hic? Asperiores impedit, magni laboriosam harum earum sint reiciendis? Quod commodi vel laborum, est reiciendis obcaecati veniam officiis possimus? Numquam molestias similique accusamus magni dolorem nostrum accusantium quo deserunt reiciendis! Eveniet sint quos aliquid odit. Aliquid, nihil delectus quia at odit, tenetur iste minus obcaecati provident corrupti rem quos. Dolore quae sunt labore laudantium corporis accusamus vel eum ab voluptatem earum, repellendus nulla ea corrupti voluptate similique porro dolorum accusantium quis assumenda reprehenderit! Ducimus natus quis deleniti officia amet accusantium? Consequuntur provident hic blanditiis autem?
 
   <div class = "rightside">
       <div>
